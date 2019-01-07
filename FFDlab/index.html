@@ -14,7 +14,6 @@ div.head {
    font-size: 20px;
    font-family: Forte;
    color: rgb(210, 210, 210);
-
 }
 div.leftFace {
    /*background-color: rgba(255, 255, 255, 0.7);*/
@@ -25,7 +24,6 @@ div.leftFace {
    width: 420px;
    height: 560px;
 }
-
 div.rightFace {
    /*background-color: rgba(255, 255, 255, 0.7);*/
    margin: 0px;
@@ -41,12 +39,9 @@ div.rightFace {
 .hover img:hover {
   opacity:0;
 }
-
 .slidecontainer {
   width: 150px;
-
 }
-
 .slider {
   -webkit-appearance: none;
   width: 150px;
@@ -57,11 +52,9 @@ div.rightFace {
   -webkit-transition: .2s;
   transition: opacity .2s;
 }
-
 .slider:hover {
   opacity: 1;
 }
-
 .slider::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
@@ -70,14 +63,12 @@ div.rightFace {
   background: red;
   cursor: pointer;
 }
-
 .slider::-moz-range-thumb {
   width: 25px;
   height: 15px;
   background: red;
   cursor: pointer;
 }
-
 .button {
   background-color: rgba(230, 10, 0, .55);
   /*border-radius: : 0.5px;*/
@@ -91,7 +82,6 @@ div.rightFace {
 .button:hover {
   background-color:  rgba(240, 10, 0, .75);
 }
-
 /*another button*/
 .button1 {
   background-color: rgba(230, 10, 0, .55);
@@ -103,12 +93,9 @@ div.rightFace {
   font-size: 24px;
   cursor: pointer;
 }
-
 .button1:hover {
   background-color:  rgba(240, 10, 0, .75);
 }
-
-
 </style>
 
 
@@ -150,6 +137,8 @@ div.rightFace {
 <!--上面這個滑桿-->
 <button type="button" id="bre" onclick='document.getElementById("indicate").style.opacity = "0"' class="button1" style="position: absolute; top: 600px; left: 700px; opacity: 0;">Click to Reset</button>
 <button type="button" id="bstart"  class="button" style="position: absolute; top: 725px; left: 990px">Start</button>
+<!--<button type="button" id="bend"  class="button" style="position: absolute; top: 725px; left: 990px">End</button>
+-->
 <!--Rearrange faces Randomly-->
 
 <script>
@@ -157,22 +146,16 @@ var slider = document.getElementById("myRange");
 var output = document.getElementById("demo");
 var t = 1;
 output.innerHTML = t;
-
-
 slider.oninput = function() {
   t = parseInt(this.value)*0.2;
   t = t.toFixed(2);
   output.innerHTML = t;
-
 }
-
 var slider1 = document.getElementById("myRange1");
 var output1 = document.getElementById("demo1");
 var output11 = document.getElementById("demo11");
 output1.innerHTML = slider1.value;
-
 //var temp =0;
-
 slider1.oninput = function() {
   output1.innerHTML = this.value;
   //output11.innerHTML =parseInt(slider1.value)*2;
@@ -181,11 +164,9 @@ slider1.oninput = function() {
   /*這裡我要叫他讀滑桿的值，然後以left=100 px 為基準移動左圖的div*/
   document.getElementById("rfd").style.left=  (1150+(parseInt(slider1.value)-1050)/2)+"px";
 }
-
 var l = 1;
 var r = 2;
 var count = 0;
-
 document.getElementById("bstart").onclick = function() {
    document.getElementById("bre").style.opacity = "0";
    document.getElementById("bre").innerHTML = "Click to Reset";
@@ -194,15 +175,12 @@ document.getElementById("bstart").onclick = function() {
    document.getElementById("myRange1").style.opacity = "0";
 //  document.getElementById("lf").src = "images/cover/1.png";
 //  document.getElementById("rf").src = "images/cover/2.png";
-
 /*錯了for(var i=0; i<9; i++){
-
     l=1+2*i;
     r=2+2*i;
     console.log(l);
     console.log(r);
     setTimeout(change(l,r), 1000);
-
   }*/
    var timer = setInterval(change, t*1000);
    document.getElementById("bre").onclick = function() {
@@ -211,16 +189,12 @@ document.getElementById("bstart").onclick = function() {
      l = 1;
      r = 2;
      document.getElementById("bre").innerHTML = "Rearrange faces Randomly";
+     document.getElementById("indicate").style.opacity = "1";
      document.getElementById("bstart").style.opacity = "1";
      document.getElementById("myRange").style.opacity = "1";
      document.getElementById("myRange1").style.opacity = "1";
-
    }
-
 }
-
-
-
 function change(){
   if(count < 9){
       l=1+2*count;
@@ -229,20 +203,14 @@ function change(){
       document.getElementById("rf").src = "images/cover/" +r+ ".png";
       console.log(l);
       console.log(r);
-      count++;
-    }else{
-      document.getElementById("bre").style.opacity = "1";
-      document.getElementById("bstart").style.opacity = "0";
-
-      console.log(count);
+      if(++count == 9)
+        count = 0;
+        document.getElementById("bre").style.opacity = "1";
+        document.getElementById("bstart").style.opacity = "0";
     }
 }
-
-
 /*function re(){
-
 }*/
-
 </script>
 
 </body>
