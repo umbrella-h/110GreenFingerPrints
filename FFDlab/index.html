@@ -109,7 +109,7 @@ div.rightFace {
 
 </head>
 
-<body class = "toast" id= "bd" style=" opacity: 0;">
+<body class = "toast" id= "bd" >
 <!--<div class = "loading" id = "ld">
 
 <p1>Loading...</p1>-->
@@ -121,6 +121,8 @@ div.rightFace {
 <p1>---Flashed Face Distortion Effect---</p1>
 </div>
 
+<!--大箱子頂-->
+<div id="hako" style="z-index: 0" style=" opacity: 0;">
 <div id="lfd" class = "leftFace"  style="left: 100px;" >
 <!--<img  src="images/dessert_photo/xlarge.jpg" alt="dessert1" style="width: 420px;">-->
 <img id ="lf" src="images/cover/KWZ.png" alt="cover_KWZ" style="width: 420px;">
@@ -153,7 +155,11 @@ div.rightFace {
 <!--<button type="button" id="bend"  class="button" style="position: absolute; top: 725px; left: 990px">End</button>
 -->
 <!--Rearrange faces Randomly-->
-<div id = "store" style = "opacity: 0">
+
+</div>
+<!--大箱子底-->
+
+<div id = "store" style = "opacity: 1; position: fixed; left: 0px; top:2000px;">
 <img src="images/cover/1.png" alt="c1">
 <img src="images/cover/2.png" alt="c1">
 <img src="images/cover/3.png" alt="c1">
@@ -172,13 +178,13 @@ div.rightFace {
 <img src="images/cover/16.png" alt="c1">
 <img src="images/cover/17.png" alt="c1">
 <img src="images/cover/18.png" alt="c1">
-<div>
+</div>
 
 
 <script>
 
 window.onload = function(){
-  document.getElementById("bd").style.opacity = "1";
+  document.getElementById("hako").style.opacity = "1";
 }
 
 var slider = document.getElementById("myRange");
@@ -216,7 +222,7 @@ document.getElementById("bstart").onclick = function() {
    document.getElementById("indicate").style.opacity = "0";
    document.getElementById("myRange").style.opacity = "0";
    document.getElementById("myRange1").style.opacity = "0";
-   document.getElementById("bstart").style.opacity = "1";
+   document.getElementById("bstart").style.opacity = "0";
 //  document.getElementById("lf").src = "images/cover/1.png";
 //  document.getElementById("rf").src = "images/cover/2.png";
 /*非同步錯了for(var i=0; i<9; i++){
@@ -273,3 +279,5 @@ function change(){
 
 </body>
 </html>
+
+
