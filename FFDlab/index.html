@@ -159,7 +159,7 @@ div.rightFace {
 </div>
 <!--大箱子底-->
 
-<div id = "store" style = "opacity: 0; position: fixed; left: 0px; top:2000px;">
+<div id = "store" style = "opacity: 1; position: fixed; left: 0px; top:2000px;">
 <img src="images/cover/1.png" alt="c1">
 <img src="images/cover/2.png" alt="c1">
 <img src="images/cover/3.png" alt="c1">
@@ -217,12 +217,13 @@ var r1 = 1;
 var count = 0;
 document.getElementById("bstart").onclick = function() {
 
-   document.getElementById("bre").innerHTML = "Click to Reset";
+/*   document.getElementById("bre").innerHTML = "Click to Reset";*/
+   document.getElementById("bre").style.display = "inline-block";
    document.getElementById("bre").style.opacity = "1";
-   document.getElementById("indicate").style.opacity = "0";
-   document.getElementById("myRange").style.opacity = "0";
-   document.getElementById("myRange1").style.opacity = "0";
-   document.getElementById("bstart").style.opacity = "0";
+   document.getElementById("indicate").style.display = "none";
+   document.getElementById("myRange").style.display = "none";
+   document.getElementById("myRange1").style.display = "none";
+   document.getElementById("bstart").style.display = "none";
 //  document.getElementById("lf").src = "images/cover/1.png";
 //  document.getElementById("rf").src = "images/cover/2.png";
 /*非同步錯了for(var i=0; i<9; i++){
@@ -241,11 +242,11 @@ document.getElementById("bstart").onclick = function() {
      l1 = 1;
      r1 = 1;
 /*     document.getElementById("bre").innerHTML = "Rearrange faces Randomly";*/
-     document.getElementById("bre").style.opacity = "0";
-     document.getElementById("indicate").style.opacity = "1";
-     document.getElementById("bstart").style.opacity = "1";
-     document.getElementById("myRange").style.opacity = "1";
-     document.getElementById("myRange1").style.opacity = "1";
+     document.getElementById("bre").style.display = "none";
+     document.getElementById("indicate").style.display = "inline-block";
+     document.getElementById("bstart").style.display = "inline-block";
+     document.getElementById("myRange").style.display = "inline-block";
+     document.getElementById("myRange1").style.display = "inline-block";
    }
 }
 function change(){
@@ -279,5 +280,3 @@ function change(){
 
 </body>
 </html>
-
-
