@@ -1,5 +1,7 @@
 # umbrella-h.github.io
 網頁們
 
-110GreenFingerPrints: 高一10班花臺養護紀錄
-Desert? Dessert!: CSS practice 圖片來源:http://www.lafamille.com.tw/
+1) 110GreenFingerPrints: 高一10班花臺養護紀錄
+2) Desert? Dessert!: CSS practice (圖片來源:http://www.lafamille.com.tw/)
+3) FFDlab: 知覺心理學期末─flashed face distortion effect (參考影片: https://www.youtube.com/watch?v=VT9i99D_9gI)
+4) banana: Minions Banana Songs acapella (找地方播高中亂做的flash小動畫)
