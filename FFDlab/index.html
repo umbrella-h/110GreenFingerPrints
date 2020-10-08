@@ -113,36 +113,29 @@ div.rightFace {
 .isready{
   display: inline-block;
 }
-
-
 </style>
-
-
 
 </head>
 
 <body class = "toast" id= "bd"  >
-<!--<div class = "loading" id = "ld">
-
-<p1>Loading...</p1>-->
 
 </div>
 
 <div class = "head">
 <h1>Who Are We? Are "They" Around Us?</h1>
-<p1>---Flashed Face Distortion Effect---&nbsp</p1><a href="http://illusionoftheyear.com/2012/05/when-pretty-girls-turn-ugly-the-flashed-face-distortion-effect/" 
+<p1>---Flashed Face Distortion Effect---&nbsp</p1>
+  <a href="http://illusionoftheyear.com/2012/05/when-pretty-girls-turn-ugly-the-flashed-face-distortion-effect/" 
                                                      target="_blank" 
                                                      title="ref: Jason Tangen, Sean Murphy and Matthew Thompson, 2012. Second prize of 2012 Best Illusion of The Year Contest"
                                                      style="color: rgb(180, 180, 180);">
   ref: Jason Tangen, Sean Murphy and Matthew Thompson,2012. Second prize of 2012 Best Illusion of The Year Contest</a>
-  <p></p>
-  <p></p>
+<p></p>
+<p></p>
 </div>
 
 <!--大箱子頂-->
 <div id="hako" style="z-index: 0" >
 <div id="lfd" class = "leftFace unready"  style="left: 100px;" >
-<!--<img  src="images/dessert_photo/xlarge.jpg" alt="dessert1" style="width: 420px;">-->
 <img id ="lf" src="images/cover/KWZ.png" alt="cover_KWZ" style="width: 420px;">
 </div>
 
@@ -154,7 +147,6 @@ div.rightFace {
 
 
 <div id="rfd" class = "rightFace unready"  style="left: 1150px;" >
-<!--<img src="images/dessert_photo/xlarge (1).jpg" alt="dessert2" style="width: 420px;">-->
 <img id = "rf" src="images/cover/YWZ.png" alt="cover_YWZ" style="width: 420px;">
 </div>
 
@@ -177,6 +169,7 @@ div.rightFace {
 </div>
 <!--大箱子底-->
 
+<!--先偷偷載好圖片，呈現時間間隔才會比較精確--> 
 <div id = "store" style = "opacity:0 ; position: fixed; left: 0px; top:2000px;">
 <img src="images/cover/1.png" alt="c1">
 <img src="images/cover/2.png" alt="c1">
@@ -198,16 +191,13 @@ div.rightFace {
 <img src="images/cover/18.png" alt="c1">
 </div>
 
-
 <script>
 
 window.onload = function(){
-  var x = document.getElementsByClassName("unready");
+ var x = document.getElementsByClassName("unready");
  for(var j=0; j<6; j++){
    x[j].style.display = "inline-block";
  }
-
-
 }
 
 var slider = document.getElementById("myRange");
@@ -247,9 +237,9 @@ document.getElementById("bstart").onclick = function() {
    document.getElementById("myRange").style.display = "none";
    document.getElementById("myRange1").style.display = "none";
    document.getElementById("bstart").style.display = "none";
-//  document.getElementById("lf").src = "images/cover/1.png";
-//  document.getElementById("rf").src = "images/cover/2.png";
-/*非同步錯了for(var i=0; i<9; i++){
+
+/*非同步錯了，留一個錯誤筆記
+  for(var i=0; i<9; i++){
     l=1+2*i;
     r=2+2*i;
     console.log(l);
@@ -264,7 +254,7 @@ document.getElementById("bstart").onclick = function() {
      r = 2;
      l1 = 1;
      r1 = 1;
-/*     document.getElementById("bre").innerHTML = "Rearrange faces Randomly";*/
+     
      document.getElementById("bre").style.display = "none";
      document.getElementById("indicate").style.display = "inline-block";
      document.getElementById("bstart").style.display = "inline-block";
@@ -274,31 +264,22 @@ document.getElementById("bstart").onclick = function() {
 }
 function change(){
   if(count < 9){
-/*      l=1+2*count;
-      r=2+2*count;*/
-      while(l1 == r1 || l == l1 || r == r1 ){
+/*    l=1+2*count;
+      r=2+2*count;-----不需要測試到隨機抽取時用的*/
+    while(l1 == r1 || l == l1 || r == r1 ){
       l1 = Math.floor((Math.random() * 18) + 1);
       r1 = Math.floor((Math.random() * 18) + 1);
-      }
+    }
     l = l1;
     r = r1;
-      document.getElementById("lf").src = "images/cover/" +l+ ".png";
-      document.getElementById("rf").src = "images/cover/" +r+ ".png";
-      console.log(l);
-      console.log(r);
-      if(++count == 9)
-        count = 0;
-/*        document.getElementById("bre").style.opacity = "1";
-        document.getElementById("bstart").style.opacity = "0";*/
+    document.getElementById("lf").src = "images/cover/" +l+ ".png";
+    document.getElementById("rf").src = "images/cover/" +r+ ".png";
+    console.log(l);
+    console.log(r);
+    if(++count == 9)
+       count = 0;
     }
 }
-/*function re(){
-}*/
-/*window.onload=function(){
-   $(".loading").fadeOut();
-}*/
-
-
 </script>
 
 </body>
