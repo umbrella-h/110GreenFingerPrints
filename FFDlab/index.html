@@ -37,7 +37,6 @@
 <img src="images/indication/havent_been.png" alt="havent_been" style="width: 310px;position: absolute ; top: 340px; left: -100px;">
 </div>
 
-
 <div id="rfd" class = "rightFace unready"  style="left: 1150px;" >
 <img id = "rf" src="images/cover/YWZ.png" alt="cover_YWZ" style="width: 420px;">
 </div>
@@ -83,26 +82,26 @@
 <script>
 
 window.onload = function(){
- var x = document.getElementsByClassName("unready");
+ let x = document.getElementsByClassName("unready");
  for(var j=0; j<6; j++){
    x[j].style.display = "inline-block";
  }
 }
 
-var slider = document.getElementById("myRange");
-var output = document.getElementById("demo");
-var t = 1;
+let slider = document.getElementById("myRange");
+let output = document.getElementById("demo");
+let t = 1;
 output.innerHTML = t;
 slider.oninput = function() {
   t = parseInt(this.value)*0.2;
   t = t.toFixed(2);
   output.innerHTML = t;
 }
-var slider1 = document.getElementById("myRange1");
-var output1 = document.getElementById("demo1");
-var output11 = document.getElementById("demo11");
+let slider1 = document.getElementById("myRange1");
+let output1 = document.getElementById("demo1");
+let output11 = document.getElementById("demo11");
 output1.innerHTML = slider1.value;
-//var temp =0;
+//let temp =0;
 slider1.oninput = function() {
   output1.innerHTML = this.value;
   //output11.innerHTML =parseInt(slider1.value)*2;
@@ -111,12 +110,11 @@ slider1.oninput = function() {
   /*這裡我要叫他讀滑桿的值，然後以left=100 px 為基準移動左圖的div*/
   document.getElementById("rfd").style.left=  (1150+(parseInt(slider1.value)-1050)/2)+"px";
 }
-var l = 1;
-var r = 2;
-var l1 = 1;
-var r1 = 1;
-
-var count = 0;
+let l = 1;
+let r = 2;
+let l1 = 1;
+let r1 = 1;
+let count = 0;
 document.getElementById("bstart").onclick = function() {
    document.getElementById("bre").style.display = "inline-block";
    document.getElementById("bre").style.opacity = "1";
@@ -126,14 +124,14 @@ document.getElementById("bstart").onclick = function() {
    document.getElementById("bstart").style.display = "none";
 
 /*非同步錯了，留一個錯誤筆記
-  for(var i=0; i<9; i++){
+  for(let i=0; i<9; i++){
     l=1+2*i;
     r=2+2*i;
     console.log(l);
     console.log(r);
     setTimeout(change(l,r), 1000);
   }*/
-   var timer = setInterval(change, t*1000);
+   let timer = setInterval(change, t*1000);
    document.getElementById("bre").onclick = function() {
      clearInterval(timer);
      count = 0;
