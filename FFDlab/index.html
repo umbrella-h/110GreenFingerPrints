@@ -85,11 +85,11 @@ window.onload = function(){
  let x = $(".unready");
  for(var j=0; j<6; j++){
    x[j].style.display = "inline-block";
-   console.log("$$$");
+   //console.log("$$$");
  }
 }
 
-let slider = $("#myRange");
+let slider = $("input[id='myRange']");
 let output = $("#demo");
 let t = 1;
 output.innerHTML = t;
@@ -98,7 +98,7 @@ slider.oninput = function() {
   t = t.toFixed(2);
   output.innerHTML = t;
 }
-let slider1 = $("#myRange1");
+let slider1 = $("input[id='myRange1']");
 let output1 = $("#demo1");
 let output11 = $("#demo11");
 output1.innerHTML = slider1.value;
