@@ -89,7 +89,7 @@ window.onload = function(){
 }
 
 let slider = document.getElementById("myRange");
-let output = document.getElementById("demo");
+let output = $("#demo");
 let t = 1;
 output.innerHTML = t;
 slider.oninput = function() {
@@ -98,8 +98,8 @@ slider.oninput = function() {
   output.innerHTML = t;
 }
 let slider1 = document.getElementById("myRange1");
-let output1 = document.getElementById("demo1");
-let output11 = document.getElementById("demo11");
+let output1 = $("#demo1");
+let output11 = $("#demo11");
 output1.innerHTML = slider1.value;
 //let temp =0;
 slider1.oninput = function() {
