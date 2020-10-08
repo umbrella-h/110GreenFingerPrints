@@ -160,11 +160,8 @@ div.rightFace {
   <p style="color: rgb(220, 210, 210)">&nbsp&nbspface interval&nbsp <span id="demo1"></span>&nbsppx<span id="demo11"></span></p>
 </div>
 <!--上面這個滑桿-->
-<button type="button" id="bre" onclick='document.getElementById("indicate").style.opacity = "0"' class="button1 unready" style="position: absolute; top: 600px; left: 700px; opacity: 0;">Click to Reset</button>
+<button type="button" id="bre" onclick='$("#indicate").style.opacity = "0"' class="button1 unready" style="position: absolute; top: 600px; left: 700px; opacity: 0;">Click to Reset</button>
 <button type="button" id="bstart"  class="button unready" style="position: absolute; top: 725px; left: 990px">Start</button>
-<!--<button type="button" id="bend"  class="button" style="position: absolute; top: 725px; left: 990px">End</button>
--->
-<!--Rearrange faces Randomly-->
 
 </div>
 <!--大箱子底-->
@@ -229,8 +226,6 @@ var r1 = 1;
 
 var count = 0;
 document.getElementById("bstart").onclick = function() {
-
-/*   document.getElementById("bre").innerHTML = "Click to Reset";*/
    document.getElementById("bre").style.display = "inline-block";
    document.getElementById("bre").style.opacity = "1";
    document.getElementById("indicate").style.display = "none";
