@@ -43,7 +43,7 @@
 
 <div class="slidecontainer unready" style="position: absolute; top: 725px;left: 630px;">
   <input type="range" min="0" max="10" value="5" class="slider" id="myRange">
-  <p style="color: rgb(220, 210, 210)">&nbsp&nbspTime interval&nbsp <span id="demo"></span>&nbsp&nbspsec<span id="demo01"></span></p>
+  <p style="color: rgb(220, 210, 210)">&nbsp&nbsptime interval&nbsp <span id="demo"></span>&nbsp&nbspsec<span id="demo01"></span></p>
 </div>
 
 <div class="slidecontainer unready" style="position: absolute; top: 725px;left: 810px;">
@@ -82,14 +82,14 @@
 <script>
 
 window.onload = function(){
- let x = document.getElementsByClassName("unready");
+ let x = $(".unready");
  for(var j=0; j<6; j++){
    x[j].style.display = "inline-block";
  }
 }
 
-let slider = document.getElementById("myRange");
-let output = document.getElementById("demo");
+let slider = $("#myRange");
+let output = $("#demo");
 let t = 1;
 output.innerHTML = t;
 slider.oninput = function() {
@@ -97,31 +97,29 @@ slider.oninput = function() {
   t = t.toFixed(2);
   output.innerHTML = t;
 }
-let slider1 = document.getElementById("myRange1");
-let output1 = document.getElementById("demo1");
-let output11 = document.getElementById("demo11");
+let slider1 = $("#myRange1");
+let output1 = $("#demo1");
+let output11 = $("#demo11");
 output1.innerHTML = slider1.value;
 //let temp =0;
 slider1.oninput = function() {
   output1.innerHTML = this.value;
-  //output11.innerHTML =parseInt(slider1.value)*2;
-  //temp = parseInt(slider1.value) +50;
-  document.getElementById("lfd").style.left=  (100-(parseInt(slider1.value)-1050)/2)+"px";
+  $("#lfd").style.left=  (100-(parseInt(slider1.value)-1050)/2)+"px";
   /*這裡我要叫他讀滑桿的值，然後以left=100 px 為基準移動左圖的div*/
-  document.getElementById("rfd").style.left=  (1150+(parseInt(slider1.value)-1050)/2)+"px";
+  $("#rfd").style.left=  (1150+(parseInt(slider1.value)-1050)/2)+"px";
 }
 let l = 1;
 let r = 2;
 let l1 = 1;
 let r1 = 1;
 let count = 0;
-document.getElementById("bstart").onclick = function() {
-   document.getElementById("bre").style.display = "inline-block";
-   document.getElementById("bre").style.opacity = "1";
-   document.getElementById("indicate").style.display = "none";
-   document.getElementById("myRange").style.display = "none";
-   document.getElementById("myRange1").style.display = "none";
-   document.getElementById("bstart").style.display = "none";
+$("#bstart").onclick = function() {
+   $("#bre").style.display = "inline-block";
+   $("#bre").style.opacity = "1";
+   $("#indicate").style.display = "none";
+   $("#myRange").style.display = "none";
+   $("#myRange1").style.display = "none";
+   $("#bstart").style.display = "none";
 
 /*非同步錯了，留一個錯誤筆記
   for(let i=0; i<9; i++){
@@ -132,7 +130,7 @@ document.getElementById("bstart").onclick = function() {
     setTimeout(change(l,r), 1000);
   }*/
    let timer = setInterval(change, t*1000);
-   document.getElementById("bre").onclick = function() {
+   $("#bre").onclick = function() {
      clearInterval(timer);
      count = 0;
      l = 1;
@@ -140,11 +138,11 @@ document.getElementById("bstart").onclick = function() {
      l1 = 1;
      r1 = 1;
      
-     document.getElementById("bre").style.display = "none";
-     document.getElementById("indicate").style.display = "inline-block";
-     document.getElementById("bstart").style.display = "inline-block";
-     document.getElementById("myRange").style.display = "inline-block";
-     document.getElementById("myRange1").style.display = "inline-block";
+     $("#bre").style.display = "none";
+     $("#indicate").style.display = "inline-block";
+     $("#bstart").style.display = "inline-block";
+     $("#myRange").style.display = "inline-block";
+     $("#myRange1").style.display = "inline-block";
    }
 }
 function change(){
@@ -157,8 +155,8 @@ function change(){
     }
     l = l1;
     r = r1;
-    document.getElementById("lf").src = "images/cover/" +l+ ".png";
-    document.getElementById("rf").src = "images/cover/" +r+ ".png";
+    $("#lf").src = "images/cover/" +l+ ".png";
+    $("#rf").src = "images/cover/" +r+ ".png";
     console.log(l);
     console.log(r);
     if(++count == 9)
