@@ -5,17 +5,15 @@
 </script>
 <title>FFD Effect</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<style type="text/css">
-@import url(ffdStyle.css);
-</style>
-  
+<link href="ffdStyle.css" rel="stylesheet" type="text/css" />
+
 </head>
 
 <body class = "toast" id= "bd"  >
 
 <div class = "head">
-<h1>Who Are We? Are "They" Around Us?</h1>
-<p1>---Flashed Face Distortion Effect---&nbsp</p1>
+<h1 class = "who">Who Are We? Are "They" Around Us?</h1><br>
+<p1>---Flashed Face Distortion Effect---&nbsp</p1><br>
   <a href="http://illusionoftheyear.com/2012/05/when-pretty-girls-turn-ugly-the-flashed-face-distortion-effect/" 
                                                      target="_blank" 
                                                      title="ref: Jason Tangen, Sean Murphy and Matthew Thompson, 2012. Second prize of 2012 Best Illusion of The Year Contest"
@@ -27,32 +25,32 @@
 
 <!--大箱子頂-->
 <div id="hako" style="z-index: 0" >
-<div id="lfd" class = "leftFace unready"  style="left: 100px;" >
+<div id="lfd" class = "leftFace unready">
 <img id ="lf" src="images/cover/KWZ.png" alt="cover_KWZ" style="width: 420px;">
 </div>
 
-<img src="images/indication/cross.png" alt="cross" style="width: 100px;position: absolute ; top: 380px; left: 785px ;">
-<div style="width: 400px; height: 600px; position: absolute; left: 785px ;" id="indicate">
+<img src="images/indication/cross.png" alt="cross" class="focus">
+<div class= "mid" id="indicate">
 <img src="images/indication/keep_your_eyes.png" alt="keep_your_eyes" style="width: 290px;position: absolute ; top: 100px; left:-90px; ">
 <img src="images/indication/havent_been.png" alt="havent_been" style="width: 310px;position: absolute ; top: 340px; left: -100px;">
 </div>
 
-<div id="rfd" class = "rightFace unready"  style="left: 1150px;" >
+<div id="rfd" class = "rightFace unready">
 <img id = "rf" src="images/cover/YWZ.png" alt="cover_YWZ" style="width: 420px;">
 </div>
 
-<div class="slidecontainer unready" style="position: absolute; top: 725px;left: 630px;">
+<div class="slidecontainer_t unready">
   <input type="range" min="0" max="10" value="5" class="slider" id="myRange">
   <p style="color: rgb(220, 210, 210)">&nbsp&nbsptime interval&nbsp <span id="demo"></span>&nbsp&nbspsec<span id="demo01"></span></p>
 </div>
 
-<div class="slidecontainer unready" style="position: absolute; top: 725px;left: 810px;">
+<div class="slidecontainer_f unready">
   <input type="range" min="850" max="1246" value="1050" class="slider" id="myRange1">
   <p style="color: rgb(220, 210, 210)">&nbsp&nbspface interval&nbsp <span id="demo1"></span>&nbsppx<span id="demo11"></span></p>
 </div>
 <!--上面這個滑桿-->
-<button type="button" id="bre" onclick='$("#indicate").style.opacity = "0"' class="button1 unready" style="position: absolute; top: 600px; left: 700px; opacity: 0;">Click to Reset</button>
-<button type="button" id="bstart"  class="button unready" style="position: absolute; top: 725px; left: 990px">Start</button>
+<button type="button" id="bre" onclick='$("#indicate").style.opacity = "0"' class="b_reset unready">Click to Reset</button>
+<button type="button" id="bstart"  class="b_start unready">Start</button>
 
 </div>
 <!--大箱子底-->
@@ -86,6 +84,9 @@ window.onload = function(){
  for(var j=0; j<6; j++){
    x[j].style.display = "inline-block";
  }
+ if(window.innerHeight > window.innerWidth){
+   alert("Please rotate and view in landscape.\nPlease zoom to fit in.");
+ }
 }
 
 let slider = document.getElementById("myRange");
@@ -106,9 +107,9 @@ slider1.oninput = function() {
   output1.innerHTML = this.value;
   //output11.innerHTML =parseInt(slider1.value)*2;
   //temp = parseInt(slider1.value) +50;
-  document.getElementById("lfd").style.left=  (100-(parseInt(slider1.value)-1050)/2)+"px";
+  document.getElementById("lfd").style.left=  (20-(parseInt(slider1.value)-1050)/2)+"px";
   /*這裡我要叫他讀滑桿的值，然後以left=100 px 為基準移動左圖的div*/
-  document.getElementById("rfd").style.left=  (1150+(parseInt(slider1.value)-1050)/2)+"px";
+  document.getElementById("rfd").style.left=  (1080+(parseInt(slider1.value)-1050)/2)+"px";
 }
 let l = 1;
 let r = 2;
