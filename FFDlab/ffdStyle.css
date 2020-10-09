@@ -1,24 +1,35 @@
 div.loading {
-  　　position:fixed;
- 　　 width:100%;
-　　  height:100%;
-      background-color: rgba(0, 0, 0, 0.45);
+    position: fixed;
+    width: 97%;
+    height: 97%;
+    background-color: rgba(0, 0, 0, 0.45);
    }
-body.toast {background-color: rgb(20, 20, 20)}
+body.toast {
+  background-color: rgb(20, 20, 20);
+  width:97%;
+  height:97%
+}
+.who{
+  font-size: 30px;
+  display: inline-block;
+}
 div.head {
    /*background-color: rgba(255, 255, 255, 0.45);*/
-   padding: 1px;
+   padding: 8px;
+   
    /*border: 2px solid rgb(220, 215, 215);*/
    margin: 10px;
+   display: inline-block;
+   width:1200px;
    text-align: left;
-   font-size: 20px;
+   font-size: 16px;
    font-family: verdana;
    color: rgb(210, 210, 210);
-
 }
 div.leftFace {
    /*background-color: rgba(255, 255, 255, 0.7);*/
    margin: 0px;
+   left: 20px;
    padding: 0 px;
    position: absolute;
    border: 2px solid rgb(240, 240, 240);
@@ -29,10 +40,23 @@ div.rightFace {
    /*background-color: rgba(255, 255, 255, 0.7);*/
    margin: 0px;
    padding: 0 px;
+   left: 1070px;
    position: absolute;
    border: 2px solid rgb(240, 240, 240);
    width: 420px;
    height: 560px;
+}
+.focus{
+  width: 100px;
+  position: absolute;
+  top: 380px;
+  left: 705px ;
+}
+div.mid{
+  width: 400px;
+  height: 550px;
+  position: absolute;
+  left: 705px ;
 }
 .hover img {
  position: absolute;
@@ -40,8 +64,17 @@ div.rightFace {
 .hover img:hover {
   opacity:0;
 }
-.slidecontainer {
+.slidecontainer_t {
   width: 150px;
+  position: absolute;
+  top: 700px;
+  left: 560px;
+}
+.slidecontainer_f {
+  width: 150px;
+  position: absolute;
+  top: 700px;
+  left: 740px;
 }
 .slider {
   -webkit-appearance: none;
@@ -70,7 +103,7 @@ div.rightFace {
   background: red;
   cursor: pointer;
 }
-.button {
+.b_start{
   background-color: rgba(230, 10, 0, .55);
   /*border-radius: : 0.5px;*/
   color: rgba(255,255,255,.88);
@@ -79,12 +112,15 @@ div.rightFace {
   text-align: center;
   font-size: 18px;
   cursor: pointer;
+  position: absolute;
+  top: 700px;
+  left: 920px
 }
-.button:hover {
+.b_start:hover {
   background-color:  rgba(240, 10, 0, .75);
 }
 /*another button*/
-.button1 {
+.b_reset {
   background-color: rgba(230, 10, 0, .55);
   /*border-radius: : 0.5px;*/
   color: rgba(255,255,255,.88);
@@ -93,8 +129,12 @@ div.rightFace {
   text-align: center;
   font-size: 18px;
   cursor: pointer;
+  position: absolute;
+  top: 600px;
+  left: 630px;
+  opacity: 0;
 }
-.button1:hover {
+.b_reset:hover {
   background-color:  rgba(240, 10, 0, .75);
 }
 
