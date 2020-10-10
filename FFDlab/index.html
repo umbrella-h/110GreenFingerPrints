@@ -5,9 +5,7 @@
 </script>
 <title>FFD Effect</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<style type="text/css">
-@import url(ffdStyle.css);
-</style>
+<link href="ffdStyle.css" rel="stylesheet" type="text/css">
 
 </head>
 
@@ -16,19 +14,18 @@
 <div class = "head">
 <h1 class = "who">Who Are We? Are "They" Around Us?</h1><br>
 <p1>---Flashed Face Distortion Effect---&nbsp</p1><br>
-  <a href="http://illusionoftheyear.com/2012/05/when-pretty-girls-turn-ugly-the-flashed-face-distortion-effect/" 
+  <a id ="reflink" href="http://illusionoftheyear.com/2012/05/when-pretty-girls-turn-ugly-the-flashed-face-distortion-effect/" 
                                                      target="_blank" 
-                                                     title="ref: Jason Tangen, Sean Murphy and Matthew Thompson, 2012. Second prize of 2012 Best Illusion of The Year Contest"
-                                                     style="color: rgb(180, 180, 180);">
+                                                     title="ref: Jason Tangen, Sean Murphy and Matthew Thompson, 2012. Second prize of 2012 Best Illusion of The Year Contest">
   ref: Jason Tangen, Sean Murphy and Matthew Thompson,2012. Second prize of 2012 Best Illusion of The Year Contest</a>
 <p></p>
 <p></p>
 </div>
 
 <!--大箱子頂-->
-<div id="hako" style="z-index: 0" >
+<div id="hako"class = "hakoStyle">
 <div id="lfd" class = "leftFace unready">
-<img id ="lf" src="images/cover/KWZ.png" alt="cover_KWZ" style="width: 420px;">
+<img id ="lf" class = "lfStyle" src="images/cover/KWZ.png" alt="cover_KWZ">
 </div>
 
 <img src="images/indication/cross.png" alt="cross" class="focus">
@@ -38,27 +35,27 @@
 </div>
 
 <div id="rfd" class = "rightFace unready">
-<img id = "rf" src="images/cover/YWZ.png" alt="cover_YWZ" style="width: 420px;">
+<img id = "rf" src="images/cover/YWZ.png" alt="cover_YWZ">
 </div>
 
 <div class="slidecontainer_t unready">
   <input type="range" min="0" max="10" value="5" class="slider" id="myRange">
-  <p style="color: rgb(220, 210, 210)">&nbsp&nbsptime interval&nbsp <span id="demo"></span>&nbsp&nbspsec<span id="demo01"></span></p>
+  <p id = "tags">&nbsptime interval&nbsp <span id="demo"></span>&nbsp&nbspsec<span id="demo01"></span></p>
 </div>
 
 <div class="slidecontainer_f unready">
   <input type="range" min="850" max="1246" value="1050" class="slider" id="myRange1">
-  <p style="color: rgb(220, 210, 210)">&nbsp&nbspface interval&nbsp <span id="demo1"></span>&nbsppx<span id="demo11"></span></p>
+  <p id = "tags">&nbspface &nbsp <span id="demo1"></span>&nbsppx<span id="demo11"></span></p>
 </div>
 <!--上面這個滑桿-->
-<button type="button" id="bre" onclick='$("#indicate").style.opacity = "0"' class="b_reset unready">Click to Reset</button>
+<button type="button" id="bre" class="b_reset unready">Reset</button>
 <button type="button" id="bstart"  class="b_start unready">Start</button>
 
 </div>
 <!--大箱子底-->
 
 <!--先偷偷載好圖片，呈現時間間隔才會比較精確--> 
-<div id = "store" style = "opacity:0 ; position: fixed; left: 0px; top:2000px;">
+<div id = "store" >
 <img src="images/cover/1.png" alt="c1">
 <img src="images/cover/2.png" alt="c1">
 <img src="images/cover/3.png" alt="c1">
@@ -92,39 +89,34 @@ window.onload = function(){
 }
 
 let slider = document.getElementById("myRange");
-let output = document.getElementById("demo");
 let t = 1;
-output.innerHTML = t;
+$("#demo").text(t);
 slider.oninput = function() {
   t = parseInt(this.value)*0.2;
   t = t.toFixed(2);
-  output.innerHTML = t;
+  $("#demo").text(t);
 }
+
 let slider1 = document.getElementById("myRange1");
-let output1 = document.getElementById("demo1");
-let output11 = document.getElementById("demo11");
-output1.innerHTML = slider1.value;
-//let temp =0;
+$("#demo1").text(slider1.value);
 slider1.oninput = function() {
-  output1.innerHTML = this.value;
-  //output11.innerHTML =parseInt(slider1.value)*2;
-  //temp = parseInt(slider1.value) +50;
-  document.getElementById("lfd").style.left=  (20-(parseInt(slider1.value)-1050)/2)+"px";
+  $("#demo1").text(this.value);
+  $("#lfd").css("left", (20-(parseInt(slider1.value)-1050)/2)+"px");
   /*這裡我要叫他讀滑桿的值，然後以left=100 px 為基準移動左圖的div*/
-  document.getElementById("rfd").style.left=  (1080+(parseInt(slider1.value)-1050)/2)+"px";
+  $("#rfd").css("left", (1080+(parseInt(slider1.value)-1050)/2)+"px");
 }
 let l = 1;
 let r = 2;
 let l1 = 1;
 let r1 = 1;
 let count = 0;
-document.getElementById("bstart").onclick = function() {
-   document.getElementById("bre").style.display = "inline-block";
-   document.getElementById("bre").style.opacity = "1";
-   document.getElementById("indicate").style.display = "none";
-   document.getElementById("myRange").style.display = "none";
-   document.getElementById("myRange1").style.display = "none";
-   document.getElementById("bstart").style.display = "none";
+$("#bstart").click(function() {
+  $("#bre").css("display", "inline-block");
+  $("#bre").css("opacity", "1");
+  $("#indicate").css("display", "none");
+  $("#myRange").css("display", "none");
+  $("#myRange1").css("display", "none");
+  $(this).css("display", "none");
 
 /*非同步錯了，留一個錯誤筆記
   for(let i=0; i<9; i++){
@@ -135,7 +127,7 @@ document.getElementById("bstart").onclick = function() {
     setTimeout(change(l,r), 1000);
   }*/
    let timer = setInterval(change, t*1000);
-   document.getElementById("bre").onclick = function() {
+   $("#bre").click(function() {
      clearInterval(timer);
      count = 0;
      l = 1;
@@ -143,13 +135,13 @@ document.getElementById("bstart").onclick = function() {
      l1 = 1;
      r1 = 1;
 
-     document.getElementById("bre").style.display = "none";
-     document.getElementById("indicate").style.display = "inline-block";
-     document.getElementById("bstart").style.display = "inline-block";
-     document.getElementById("myRange").style.display = "inline-block";
-     document.getElementById("myRange1").style.display = "inline-block";
-   }
-}
+     $(this).css("display", "none");
+     $("#indicate").css("display", "inline-block");
+     $("#bstart").css("display", "inline-block");
+     $("#myRange").css("display", "inline-block");
+     $("#myRange1").css("display", "inline-block");
+   })
+})
 function change(){
   if(count < 9){
 /*    l=1+2*count;
