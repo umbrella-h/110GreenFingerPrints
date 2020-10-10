@@ -9,6 +9,19 @@ body.toast {
   width:97%;
   height:97%
 }
+.hakoStyle{
+  z-index: 0;
+}
+
+#lf{
+  width: 420px;
+}
+#rf{
+  width: 420px;
+}
+#tags{
+  color: rgb(220, 210, 210);
+}
 .who{
   font-size: 30px;
   display: inline-block;
@@ -25,6 +38,9 @@ div.head {
    font-size: 16px;
    font-family: verdana;
    color: rgb(210, 210, 210);
+}
+#reflink{
+  color: rgb(180, 180, 180);
 }
 div.leftFace {
    /*background-color: rgba(255, 255, 255, 0.7);*/
@@ -67,13 +83,13 @@ div.mid{
 .slidecontainer_t {
   width: 150px;
   position: absolute;
-  top: 600px;
+  top: 700px;
   left: 560px;
 }
 .slidecontainer_f {
   width: 150px;
   position: absolute;
-  top: 600px;
+  top: 700px;
   left: 740px;
 }
 .slider {
@@ -113,8 +129,8 @@ div.mid{
   font-size: 18px;
   cursor: pointer;
   position: absolute;
-  top: 600px;
-  left: 920px
+  top: 700px;
+  left: 910px
 }
 .b_start:hover {
   background-color:  rgba(240, 10, 0, .75);
@@ -130,8 +146,8 @@ div.mid{
   font-size: 18px;
   cursor: pointer;
   position: absolute;
-  top: 600px;
-  left: 920px;
+  top: 700px;
+  left: 910px;
   opacity: 0;
 }
 .b_reset:hover {
@@ -144,4 +160,10 @@ div.mid{
 
 .isready{
   display: inline-block;
+}
+#store{
+  opacity:0 ;
+  position: fixed;
+  left: 0px;
+  top:2000px;
 }
