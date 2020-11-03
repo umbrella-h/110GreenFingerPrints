@@ -1,8 +1,8 @@
 body {
   font: 14px "Century Gothic", Futura, sans-serif;
   margin: 20px;
-  background-color: #553F71/*rgb(20, 15, 40)*/;
-  color: #8ED3CC/*rgb(180, 200, 250)*/;
+  background-color: #553F71;
+  color: #8ED3CC;
 }
 
 ol, ul {
@@ -12,6 +12,21 @@ ol, ul {
 button{
  background-color: #EF4D4E;
  color: #FDF4D9;
+ border-color: #FDF4D9;
+ border-radius: 5px;
+}
+
+a:link {
+　color: #FDF4D9
+}
+a:visited {
+　color: #8ED3CC
+}
+a:hover {
+　color: #EF4D4E
+}
+a:active {
+　color: #EF4D4E
 }
   
 .board-row:after {
