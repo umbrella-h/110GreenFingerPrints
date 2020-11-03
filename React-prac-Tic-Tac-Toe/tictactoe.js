@@ -1,5 +1,7 @@
 'use strict';
 
+//the like button is a no-JSX-practice
+
 const e = React.createElement;
 
 class LikeButton extends React.Component {
@@ -21,6 +23,7 @@ class LikeButton extends React.Component {
   }
 }
 
+//the game is a practice with JSX.
 
 class Square extends React.Component {
   constructor(props){
