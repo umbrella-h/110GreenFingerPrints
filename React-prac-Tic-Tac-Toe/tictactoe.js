@@ -26,26 +26,49 @@ class LikeButton extends React.Component {
 //the game is a practice with JSX.
 
 class Square extends React.Component {
-  constructor(props){
+  /*constructor(props){
     super(props);
     this.state = {
-      value: null,
+      value: null,      
     };
-  }
+  }*/
   render() {
     return (
       <button
-       className="square"
-       onClick= {()=> this.setState({value:'X'})}>        
-       {this.state.value}
+        className="square"
+        style={{color: "#FDF4D9"}}
+        onClick= {()=> this.props.onClick({value:'X'})}
+      >        
+        {this.props.value}
       </button>
     );
   }
 }
 
 class Board extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      squares: Array(9).fill(null),
+    }
+  }
+  //Board controls Square
+  handleClick(i){
+    const squares = this.state.squares.slice();
+    squares[i] = 'X';
+    this.setState({squares: squares});
+  }   
+  
   renderSquare(i) {
-    return <Square  value={i} />;
+    //return <Square  value={i} />;
+    
+    // use "()" so JS will not add ";" after "return"
+    //***"state" is private, so we have to send a function from Board tp Square
+    return( <Square
+              value={this.state.squares[i]}
+              onClick={()=> this.handleClick(i)}
+             />
+      );
   }
 
   render() {
@@ -82,20 +105,20 @@ class Game extends React.Component {
           <Board />
         </div>
         <div className="game-info">
-          <div>{}</div>
-          <ol>{}</ol>
+          <div>{/* status */}</div>
+          <ol>{/* TODO */}</ol>
         </div>
       </div>
     );
   }
 }
 
+// ========================================
+
 ReactDOM.render(
   <Game />,
   document.getElementById('root')
 );
-
-
 
 const domContainer = document.querySelector('#like_button_container');
 ReactDOM.render(e(LikeButton), domContainer);
