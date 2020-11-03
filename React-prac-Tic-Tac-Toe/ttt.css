@@ -17,10 +17,6 @@ button{
  border: 0px solid #8ED3CC;
 }
 
-#ref {
-　color: #8ED3CC;
-}
-
 #errors {
   background: #00;
   color: #fff;
@@ -71,4 +67,8 @@ button{
 
 .game-info {
   margin-left: 20px;
+}
+
+#ref {
+　color: #8ED3CC;
 }
