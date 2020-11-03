@@ -17,8 +17,8 @@ button{
  border: 0px solid #8ED3CC;
 }
 
-#ref.a{
-　color: #8ED3CC !important;
+#ref{
+　color: #8ED3CC;
 }
   
 .board-row:after {
