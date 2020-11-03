@@ -12,13 +12,13 @@ ol, ul {
 button{
  background-color: #EF4D4E;
  color: #FDF4D9;
- /*border-color: #FDF4D9;*/
+ font: 14px "Century Gothic", Futura, sans-serif;
  border-radius: 5px;
- box-shadow: none;
+ border: 1px solid #8ED3CC;
 }
 
 a{
-　color: #8ED3CC
+　color: #8ED3CC;
 }
   
 .board-row:after {
