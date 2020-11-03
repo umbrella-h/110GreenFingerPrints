@@ -9,6 +9,11 @@ ol, ul {
   padding-left: 30px;
 }
 
+button{
+ background-color: #EF4D4E;
+ color: #FDF4D9;
+}
+  
 .board-row:after {
   clear: both;
   content: "";
