@@ -22,8 +22,6 @@ class LikeButton extends React.Component {
 }
 
 
-/*
-
 class Square extends React.Component {
   constructor(props){
     super(props);
@@ -95,7 +93,6 @@ ReactDOM.render(
   document.getElementById('root')
 );
 
-*/
 
 
 const domContainer = document.querySelector('#like_button_container');
