@@ -25,13 +25,14 @@ class LikeButton extends React.Component {
 
 //the game is a practice with JSX.
 
-class Square extends React.Component {
+//class Square extends React.Component {
+function Square(props){
   /*constructor(props){
     super(props);
     this.state = {
       value: null,      
     };
-  }*/
+  }no state, so use function is enough, rather than extending React.Component
   render() {
     return (
       <button
@@ -42,7 +43,20 @@ class Square extends React.Component {
         {this.props.value}
       </button>
     );
+  }*/
+  let xColor = "#FDF4D9";
+  if (props.value=='O'){
+    xColor = "#EF4D4E";
   }
+  return (
+    <button 
+      className="square"
+      style={{color: xColor}}
+      onClick={props.onClick}
+    >
+      {props.value}
+    </button>
+  );
 }
 
 class Board extends React.Component {
@@ -50,13 +64,17 @@ class Board extends React.Component {
     super(props);
     this.state = {
       squares: Array(9).fill(null),
+      xIsNext: true,
     }
   }
   //Board controls Square
   handleClick(i){
     const squares = this.state.squares.slice();
-    squares[i] = 'X';
-    this.setState({squares: squares});
+    squares[i] = this.state.xIsNext ? 'X' : 'O';
+    this.setState({
+      squares: squares,
+      xIsNext: !this.state.xIsNext,           
+    });
   }   
   
   renderSquare(i) {
@@ -72,7 +90,7 @@ class Board extends React.Component {
   }
 
   render() {
-    const status = 'Next player: X';
+    const status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O');
 
     return (
       <div>
@@ -119,6 +137,7 @@ ReactDOM.render(
   <Game />,
   document.getElementById('root')
 );
+
 
 const domContainer = document.querySelector('#like_button_container');
 ReactDOM.render(e(LikeButton), domContainer);
