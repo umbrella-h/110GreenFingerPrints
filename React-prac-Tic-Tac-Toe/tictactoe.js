@@ -12,7 +12,7 @@ class LikeButton extends React.Component {
 
   render() {
     if (this.state.liked) {
-      return 'You, Sochirasama, Ni and '+ Math.floor(Math.random() * (555 - 588) + 555) +' others liked this.';
+      return 'You, Sochirasama, Ni and '+ Math.floor(Math.random() * (589 - 555) + 555) +' others liked this.';
     }
 
     return e(
